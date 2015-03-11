@@ -24,6 +24,8 @@ Docker参考
   *docker commit -m='Push to docker.diors.it' -a='ezc' c07f6b925d76 docker.diors.it/alpha_machine:v0.8*
 * 从中央仓库拉image  
   *docker pull docker.diors.it/alpha_machine:v0.8*
+* 为image创建tag
+  *docker tag 93c447941695 docker.diors.it/beta_machine:v1.0*
 * 查看所有的image   
   *docker images*
 * 查看所有虚机   
