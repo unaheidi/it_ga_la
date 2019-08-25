@@ -1,14 +1,14 @@
 #### Git 最小配置
 * 某账号下所有的 Git 仓库都有效
 ```
-git config --global user.name 'Your name' 
-git config --global user.email 'Your email'
+git config --global user.name '您的名称' 
+git config --global user.email '您的Email'
 ```
 
 * 只对当前 Git 仓库有效 
 ```
-git config --local user.name 'Your name'
-git config --local user.email 'Your email'
+git config --local user.name '您的名称'
+git config --local user.email '您的Email'
 ```
 
 #### 查看 Git 的配置
@@ -56,7 +56,7 @@ git add -A
 
 * 把指定文件添加到暂存区
 ```
-git add file1 file2 file3  
+git add 文件1 文件2 文件3  
 ```
 
 * 创建正式的 commit 
@@ -66,17 +66,17 @@ git commit
 
 * 比较某文件工作区和暂存区的差异 
 ```
-git diff file1
+git diff 某文件
 ```
 
 * 比较某文件暂存区和 HEAD 的差异
 ```
-git diff --cached file1
+git diff --cached 某文件
 ```
 
 * 比较某文件工作区和 HEAD 的差异
 ```
-git diff HEAD file1 
+git diff HEAD 某文件
 ```
 
 * 比较工作区和暂存区的所有差异
@@ -91,12 +91,12 @@ git diff --cached
 
 * 把工作区指定文件恢复成和暂存区一样
 ```
-git checkout -- file1 file2 file3  
+git checkout -- 文件1 文件2 文件3  
 ```
 
 * 把暂存区指定文件恢复成和 HEAD 一样
 ```
-git reset --mixed -- file1 file2 file3  
+git reset --mixed -- 文件1 文件2 文件3  
 ```
 
 * 把暂存区和工作区所有文件恢复成和 HEAD 一样
@@ -106,7 +106,7 @@ git reset --hard
 
 * 用 difftool 比较任意两个 commit 的差异
 ```
-git difftool commit_A commit_B  
+git difftool 提交A 提交B  
 ```
 
 #### 加塞临时任务的处理
@@ -132,7 +132,7 @@ git stash list
 
 * 取回某次 stash 的变更
 ```
-git stash pop stash@{n}
+git stash pop stash@{数字n}
 ```
 
 #### 修改个人分支的历史
@@ -170,12 +170,12 @@ git log --oneline --graph --all
 
 * 查看涉及到某文件变更的所有 commit
 ```
-git log file
+git log 某文件
 ```
 
 * 某文件各行最后修改对应的 commit 以及作者
 ```
-git blame file
+git blame 某文件
 ```
 #### 分支与标签
 * 基于当前分支创建新分支
@@ -190,7 +190,7 @@ git branch 新分支 已有分支
 
 * 基于某个 commit 创建分支
 ```
-git branch 新分支 commit_id
+git branch 新分支 某个commit的id
 ```
 
 * 创建分支并切换到该分支
@@ -215,17 +215,17 @@ git branch -rv
 
 * 列出名称符合某样式的远端分支
 ```
-git branch -rv -l 'pattern'
+git branch -rv -l '某样式'
 ```
 
 * 安全删除本地某分支
 ```
-git branch -d branch_name
+git branch -d 拟删除分支
 ```
 
 * 强行删除本地某分支
 ```
-git branch -D branch_name
+git branch -D 拟删除分支
 ```
 
 * 删除已合并到 master 分支的所有本地分支
@@ -240,7 +240,7 @@ git remote prune origin
 
 * 给 commit 打上标签
 ```
-git tag tag_name commit_id
+git tag 标签名 commid的id
 ```
 
 #### 两分支之间的集成
@@ -277,17 +277,17 @@ git remote -v
 
 * 增加 remote
 ```
-git remote add url
+git remote add url地址
 ```
 
 * 删除 remote
 ```
-git remote remove name
+git remote remove remote的名称
 ```
 
 * 改变 remote 的 name
 ```
-git remote rename old_name new_name
+git remote rename 旧名称 新名称
 ```
 
 * 把远端所有分支和标签的变更都拉到本地
@@ -297,24 +297,24 @@ git fetch remote
 
 * 把远端分支的变更拉到本地,且 merge 到本地分支
 ```
-git pull remote branch
+git pull remote名称 分支名
 ```
 
 * 把本地分支 push 到远端
 ```
-git push remote branch
+git push remote名称 分支名
 ```
 
 * 删除远端分支
 ```
-git push remote --delete remote_branch   
+git push remote --delete 远端分支名 
 或者
-git push remote :remote_branch
+git push remote :远端分支名
 ```
 
 * 向远端提交指定标签
 ```
-git push remote tag_name
+git push remote 标签名
 ```
 
 * 向远端提交所有标签
