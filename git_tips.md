@@ -44,6 +44,11 @@ git status
 git branch -v  
 ```
 
+* 切换到指定分支 
+```
+git checkout 指定分支  
+```
+
 * 把当前目录及其子目录下所有变更都加入到暂存区
 ```
 git add .  
@@ -91,12 +96,12 @@ git diff --cached
 
 * 把工作区指定文件恢复成和暂存区一样
 ```
-git checkout -- 文件1 文件2 文件3  
+git checkout 文件1 文件2 文件3  
 ```
 
 * 把暂存区指定文件恢复成和 HEAD 一样
 ```
-git reset --mixed -- 文件1 文件2 文件3  
+git reset 文件1 文件2 文件3  
 ```
 
 * 把暂存区和工作区所有文件恢复成和 HEAD 一样
@@ -107,6 +112,11 @@ git reset --hard
 * 用 difftool 比较任意两个 commit 的差异
 ```
 git difftool 提交A 提交B  
+```
+
+* 查看哪些文件没被 Git 管控
+```
+git ls-files --others
 ```
 
 #### 加塞临时任务的处理
