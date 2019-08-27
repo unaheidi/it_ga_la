@@ -48,7 +48,7 @@ RSpec.describe "let!" do
     expect(count2).to eq(2)
   end
 
-  it "want to know whether we can call the memoized helper method in an example" do
+  it "wants to know whether we can call the memoized helper method in an example" do
     invocation_order2 << :example
     count2()
     expect(invocation_order2).to eq([:let!, :example, :let!, :let!, :example])
