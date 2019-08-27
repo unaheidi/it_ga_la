@@ -10,4 +10,54 @@
 * 一来了解了DSL的来历后可以熟练使用这些功能。
 * 二来记录如何上手新的工具，以便激励自己继续前行。
 
+#### let 与 let!  
+
+如果能正确地写出下面各项expect的结果，意味着搞懂了 let 和 let! 的区别。 
+
+```ruby
+$count1 = 0
+$count2 = 0
+RSpec.describe "let!" do
+  invocation_order1 = []
+  invocation_order2 = []
+
+  let(:count1) do
+    invocation_order1 << :let
+    $count1 += 1
+  end
+
+  let!(:count2) do
+   invocation_order2 << :let!
+   $count2 += 1
+  end
+
+  it "calls count2 before hook and calls count1 in example" do
+    invocation_order2 << :example
+    expect(invocation_order2).to eq([:let!, :example])
+    expect(invocation_order2).to eq([:let!, :example])
+    expect(count2).to eq(1)
+    expect(count2).to eq(1)
+
+    invocation_order1 << :example
+    expect(count1).to eq(1)
+    expect(invocation_order1).to eq([:example, :let])
+  end
+
+  it "verifies the function of let!" do
+    expect(invocation_order2).to eq([:let!, :example, :let!])
+    expect(count2).to eq(2)
+  end
+
+  it "want to know whether we can call the memoized helper method in an example" do
+    invocation_order2 << :example
+    count2()
+    expect(invocation_order2).to eq([:let!, :example, :let!, :let!, :example])
+
+    # We found that we can't call the memoized helper method in an example by ourselves"
+    #expect(count).to eq(4)
+    expect(count2).to eq(3)
+  end
+end
+```
+
 
