@@ -17,6 +17,7 @@
 > 停止 postgresql 服务的方法：launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist  
 > git 登陆 postgresql 的命令：psql -d gitlabhq_dev -Ugit -h 127.0.0.1  
 > pg.conf 的变更： host    all             all             127.0.0.1/32            password  
+* 原本想偷个懒，git 账号下ruby计划直接用sudo账号下的rvm，结果执行bundle失败，还是规规矩矩按照参考文档里面的安装rbenv。rbenv慢的问题可[参考](https://www.cnblogs.com/f-ck-need-u/p/10805521.html#installslow)
 
 #### let 与 let!  
 
