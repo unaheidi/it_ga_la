@@ -14,7 +14,7 @@
 * 先安装 [GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/doc/prepare.md#macos) 。
 * 再用源码安装的方式安装一套 GitLab，以便优化公司的 GitLab。[参考](https://github.com/WebEntity/Installation-guide-for-GitLab-on-OS-X)
 * 把 postgresql 摸了一遍，根据[参考资料](https://www.lijiaocn.com/%E6%8A%80%E5%B7%A7/2018/09/28/postgres-user-manage.html)搞定了git账号登陆的问题。
-> 停止 postgresql 服务的方法：launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist  
+> 停止 postgresql 服务的方法：launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist  
 > git 登陆 postgresql 的命令：psql -d gitlabhq_dev -Ugit -h 127.0.0.1  
 > pg.conf 的变更： host    all             all             127.0.0.1/32            password  
 * 原本想偷个懒，git 账号下ruby计划直接用sudo账号下的rvm，结果执行bundle失败，还是规规矩矩按照参考文档里面的安装rbenv。rbenv慢的问题可[参考](https://www.cnblogs.com/f-ck-need-u/p/10805521.html#installslow)
