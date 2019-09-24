@@ -7,7 +7,7 @@
 我们认为：在gitlab上既可以查看代码又能查看sonar分析结果，这才是开发人员所期望的。
 因此我先到github上查阅了有无现成的项目来对 gitlab和sonar进行整合的工具。令人高兴的是，果真有这样一个开源项目：
 * sonar gitlab plugin https://github.com/gabrie-allaigre/sonar-gitlab-plugin。
-本文把在搭建gitla和sonar的整合环境时，遇到的问题做个记录，一方面可以供今后翻阅，另一方通过这种形式可以更好地掌握sonar，从而更好地解决实际问题。
+本文把在搭建gitlab和sonar的整合环境时，遇到的问题做个记录，一方面可以供今后翻阅，另一方通过这种形式可以更好地掌握sonar，从而更好地解决实际问题。
 
 
 #### sonar点滴
